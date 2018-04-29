@@ -1,0 +1,39 @@
+/home/hal/Documents/school/operating_systems/HW2/delegate.cpp:56:37: warning: Potential leak of memory pointed to by 'ps._M_storage._M_t._M_head_impl' [clang-analyzer-cplusplus.NewDeleteLeaks]
+  vector<decltype(ps.get_future())> psgets{};
+                                    ^
+/home/hal/Documents/school/operating_systems/HW2/delegate.cpp:89:1: note: Calling 'sa2a_multithreader'
+sa2a_multithreader();
+^
+/home/hal/Documents/school/operating_systems/HW2/delegate.cpp:55:24: note: Calling default constructor for 'promise'
+  promise<vector<int>> ps;
+                       ^
+/usr/lib/gcc/x86_64-linux-gnu/5.5.0/../../../../include/c++/5.5.0/future:1018:13: note: Memory is allocated
+        _M_storage(new _Res_type())
+                   ^
+/home/hal/Documents/school/operating_systems/HW2/delegate.cpp:55:24: note: Returning from default constructor for 'promise'
+  promise<vector<int>> ps;
+                       ^
+/home/hal/Documents/school/operating_systems/HW2/delegate.cpp:56:37: note: Potential leak of memory pointed to by 'ps._M_storage._M_t._M_head_impl'
+  vector<decltype(ps.get_future())> psgets{};
+                                    ^
+/usr/lib/gcc/x86_64-linux-gnu/5.5.0/../../../../include/c++/5.5.0/mutex:747:5: warning: Address of stack memory associated with local variable '__bound_functor' is still referred to by the global variable '__once_callable' upon returning to the caller.  This will be a dangling reference [clang-analyzer-core.StackAddressEscape]
+    }
+    ^
+/home/hal/Documents/school/operating_systems/HW2/delegate.cpp:48:3: note: Calling 'promise::set_value'
+  p.set_value(rv);
+  ^
+/usr/lib/gcc/x86_64-linux-gnu/5.5.0/../../../../include/c++/5.5.0/future:1071:9: note: Calling '_State_baseV2::_M_set_result'
+      { _M_future->_M_set_result(_State::__setter(this, __r)); }
+        ^
+/usr/lib/gcc/x86_64-linux-gnu/5.5.0/../../../../include/c++/5.5.0/future:386:2: note: Calling 'call_once'
+        call_once(_M_once, &_State_baseV2::_M_do_set, this,
+        ^
+/usr/lib/gcc/x86_64-linux-gnu/5.5.0/../../../../include/c++/5.5.0/mutex:745:11: note: Assuming '__e' is 0
+      if (__e)
+          ^
+/usr/lib/gcc/x86_64-linux-gnu/5.5.0/../../../../include/c++/5.5.0/mutex:745:7: note: Taking false branch
+      if (__e)
+      ^
+/usr/lib/gcc/x86_64-linux-gnu/5.5.0/../../../../include/c++/5.5.0/mutex:747:5: note: Address of stack memory associated with local variable '__bound_functor' is still referred to by the global variable '__once_callable' upon returning to the caller.  This will be a dangling reference
+    }
+    ^
